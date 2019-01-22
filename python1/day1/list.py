@@ -1,0 +1,9 @@
+colors=['red','blue','yellow','green']
+print(colors)
+collection=['bag','june','18']
+print(collection)
+mylist=["diary",[28,3,5],['a','b','c']]
+print(mylist)
+mylist[0]="book"
+print(mylist[0])
+print(mylist[1][1])

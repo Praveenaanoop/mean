@@ -1,0 +1,23 @@
+.mymainbody{
+    background:rgb(16, 15, 90);
+
+}
+.anotherbody{
+    background: orange;
+}
+.mytable{
+    background: rgb(54, 54, 87);
+    border:2px solid black;
+}
+.myanothertable{
+    background: pink;
+    border: 2px solid black;
+}
+.mybutton
+{
+    background:rgb(46, 49, 41);
+}
+.myanotherbutton
+{
+    background: #6c5ce7;
+}
