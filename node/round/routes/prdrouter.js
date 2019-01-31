@@ -1,0 +1,36 @@
+var express=require('express');
+var router=express.Router();
+router.get("/",function(req,res){
+    res.render("prohome");
+})
+router.get("/scan",function(req,res){
+    res.render("scanner");
+})
+router.get("/print",function(req,res){
+    res.render("printer");
+})
+router.get("/pro/scan/news",function(req,res){
+    res.render("newscan");
+})
+router.get("/pro/scan/edits",function(req,res){
+    res.render("editscan");
+})
+router.get("/pro/scan/views",function(req,res){
+    res.render("viewscan");
+})
+router.get("/pro/scan/dels",function(req,res){
+    res.render("delscan");
+})
+router.get("/pro/print/newp",function(req,res){
+    res.render("newprint");
+})
+router.get("/pro/print/editp",function(req,res){
+    res.render("editprint");
+})
+router.get("/pro/print/viewp",function(req,res){
+    res.render("viewprint");
+})
+router.get("/pro/print/delp",function(req,res){
+    res.render("delprint");
+})
+module.exports=router;

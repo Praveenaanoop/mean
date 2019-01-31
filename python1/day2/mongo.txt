@@ -1,0 +1,16 @@
+db.dropDatabase()             #to delete db
+show dbs                      #to show dbs
+show collections              #to show collections
+use mydb                      #to create or toenter in to a particular                                database
+db.createCollection('name')   #to create collections
+db.employee.insertMany        # to insert many documents in to the                                collections([{eid:"e01",name:"praveena",dep:"HR",salary:"10000",location:"thrissur"},{eid:"e02",name:"prav",dep:"HR",salary:"20000",location:"ekm"},{eid:"e03",name:"pravee",dep:"sales",IT:"15000",location:"ktm"},{eid:"e04",name:"praveen",dep:"FINANCE",salary:"12000",location:"idk"},{eid:"e05",name:"pra",dep:"HR",salary:"12000",location:"idk"},{eid:"e06",name:"praveen",dep:"IT",salary:"12000",location:"idk"},{eid:"e07",name:"prav",dep:"FINANCE",salary:"12000",location:"idk"},{eid:"e08",name:"praveen",dep:"HR",salary:"12000",location:"idk"}])
+db.employee.find()            #to show documenrs
+db.employee.find().pretty()   #to show documents more prettier
+db.collection name.insertOne({}) #to insert only one
+db.employee.find().limit(number)    #to retrieve a particular number of records
+db.collection_name.find({...})     #to retrieve a particular field only
+db.cname.find({sal:{$lt:8000}})  #to retrieve a value which is less than 8000
+db.employee.find({dep:{$in:["HR","IT"]},salary:{$gt:8000}}) # to find out the one with salary 8000 who is working in hr and it departments
+db.employee.find({dep:"HR":{$gt:8000}})                #to find out the one who is working in hr department with salary greater than 8000
+ db.employee.find({name:"prav"},{$or:[{location:"idk"},{dep:"HR"}]})  #dep=hr or loc=idk aaytulla ram ennu perulla lde details
+ db.employee.find({name:"prav"},{$and:[{location:"idk"},{dep:"HR"}]})  #dep=hr and loc=idk aaytulla ram details
