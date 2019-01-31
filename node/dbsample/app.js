@@ -3,18 +3,21 @@ const app=express();
 var mongodb=require('mongodb');
 var mongoclient=mongodb.MongoClient;
 var url="mongodb://127.0.0.1:27017/mydb";
-
-
+var bodyparser=require('body-parser')
+app.use(bodyparser.urlencoded({extended:true}))
 
 app.set("view engine","ejs")
 app.get("/",function(req,res){
     res.render("home")
 })
-app.get("/insert",function(req,res){
+
+
+app.post("/insert",function(req,res){
     mongoclient.connect(url,function(err,database){
         var dtb=database.db('mydb');
         var empcol=dtb.collection('employee');
-        var data={eid:"e002",name:"adya",salary:15000,location:"ktm"}
+        var data={"name":req.body.emp,"salary":req.body.sal}
+    
         empcol.insert(data,function(err,result){
             if(err){
                 res.send("something wend wrong")
