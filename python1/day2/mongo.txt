@@ -14,3 +14,15 @@ db.employee.find({dep:{$in:["HR","IT"]},salary:{$gt:8000}}) # to find out the on
 db.employee.find({dep:"HR":{$gt:8000}})                #to find out the one who is working in hr department with salary greater than 8000
  db.employee.find({name:"prav"},{$or:[{location:"idk"},{dep:"HR"}]})  #dep=hr or loc=idk aaytulla ram ennu perulla lde details
  db.employee.find({name:"prav"},{$and:[{location:"idk"},{dep:"HR"}]})  #dep=hr and loc=idk aaytulla ram details
+ db.employee.find({dep:"HR"},{salary:1,location:1}) #projection
+ db.employee.find({dep:"HR"},{salary:1,location:1,_id:0})   #if we dont need id field
+ db.employee.find({dep:"HR"},{name:1,salary:1}).sort({salary:1})  #for sorting salary
+ db.employee.find( { name:"/.*an.*/" } )
+ db.employeee.remove({})   empty the whole collection
+ db.employeee.remove({name:"prav"}) #to remove a particular field
+ db.employeee.update({name:"praveen"},{salary:000}) #delete current collection and update with the new
+ db.employeee.update({name:"raju"},{$set:{salary:000}})   #add that particular field to the current one
+db.employee.update({},{$set:{dob:24-09-2018}})  #it will update only first field
+db.employee.update({},{$set:{dob:24-09-2018}},{multi:true}) #to update it in to all fields
+db.employee.update({name:"haji"},{$set:{eid:"e0001",name:"haji",dep:"HR",salary:6000,location:"tcr"}},{upsert:true})  #updated full field
+ db.employee.find({},{name:1,salary:1,dep:1}).sort({"salary":-1}).limit(1) #to sort emp salary in descending order and print the highest
