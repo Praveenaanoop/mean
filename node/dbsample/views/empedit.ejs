@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EDIT DETAILS</h1>
+    <form action="/empedit" method="post">
+        <select name="editbox">
+            <%for(var i=0;i<data.length;i++)
+        {%>
+                <option value=<%=data[i].id %>><%=data[i].id%></option>
+                <%}%>
+            </select>  
+            <button class="btn btn-success" type="submit">edit</button>
+    </form>
+</body>
+</html>
