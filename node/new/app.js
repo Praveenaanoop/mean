@@ -3,6 +3,7 @@ const app=express()
 app.set("view engine","ejs")
 var bodyparser=require('body-parser')
 app.use(bodyparser.urlencoded({extended:true}))
+var path=require('path')
 var mongoose=require('mongoose')
 var db="mongodb://localhost/mybook";
 mongoose.connect(db,function(err){
@@ -14,7 +15,7 @@ app.use(fileUpload())
 app.get("/",function(req,res){
     res.render("home")
 })
-
+app.use("/public",express.static(path.join(__dirname, 'public')));
 app.post("/insert",function(req,res){
     var b1=new book();
     b1.bid=req.body.id;

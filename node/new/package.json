@@ -12,6 +12,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-fileupload": "^1.1.1-alpha.1",
+    "express-generator": "^4.16.0",
     "mongoose": "^5.4.10"
   }
 }

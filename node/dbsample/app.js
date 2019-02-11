@@ -26,7 +26,7 @@ app.get("/edit",function(req,res){
           res.send(err);
       }
       else{
-          res.render("empedit",{data:tbdata});
+        res.render("empedit",{data:tbdata});
       }
     })
         }
