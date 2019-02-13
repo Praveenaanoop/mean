@@ -23,7 +23,7 @@ app.post("/insert",function(req,res){
     b1.author=req.body.author;
     let samfile=req.files.samplefile;
     b1.image=samfile.name;
-    samfile.mv(__dirname+"/public/images/"+samfile.name)
+    samfile.mv(__dirname+"../public/images/"+samfile.name)
     b1.save(function(err,result){
         if(err){
             res.send(err);
